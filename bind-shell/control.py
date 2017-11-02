@@ -1,7 +1,13 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Control module. Send commands to server
 # bind-tcp
+'''
+Control module connects to server-module.
+Give command - receive result.
+
+To Do: transmit stderr
+'''
 
 import socket
 
@@ -33,7 +39,3 @@ except: # may be it helps with Ctrl+C
 finally:
 	sock.close()
 
-'''
-Клиент так же постоянно подключен к серверу, отправляет сообщения и получает ответ.
-Далее снова отправляет и получает.
-'''

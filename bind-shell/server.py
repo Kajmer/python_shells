@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Server module. Recieve commands from control module and executes it.
 # bind-tcp
@@ -29,7 +29,7 @@ sock.listen(5)
 
 #conn, addr = sock.accept()
 try:
-	while True: # Постоянная работа сервера.
+	while True: # Server always listens
 		conn, addr = sock.accept()
 		conn.send("System platform is: {}".format(sys.platform))
 		conn.settimeout(60)
@@ -42,9 +42,3 @@ try:
 			conn.close()
 finally:
 	sock.close()
-
-
-'''
-Сервер должен постоянно крутится
-Принимает от клиента данные, возвращает их измененными.
-'''
